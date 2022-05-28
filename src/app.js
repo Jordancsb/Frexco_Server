@@ -1,4 +1,4 @@
-import createTable from './Contoller/produto.js'
+import createTable, { insertProduto } from './Contoller/produto.js'
 import express from 'express'
 
 const app = express();
@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 })
 
 app.post('/produto', function(req, res) {
-  console.log(req.body);
+  insertProduto(req.body)
   res.json({
     "statuscode": 200
   })
