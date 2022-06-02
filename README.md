@@ -34,7 +34,18 @@ Você terá 7 dias para concluir o desafio e nos disponibilizar o link do github
 </details>
 
 ## Sobre o Projeto 💭
+Interface de Programação de Aplicação (API) desenvolvida em Nodejs com Framework Expressjs, biblioteca CORS para evitar erros nos endpoints em alguns navegadores, utilizando SQLite (Banco leve e escalavel, já que permite a sincronização de dados, não o sobrecarregando) e por fim foi utilizada as rotas do Express para auxiliar na manutenção do código (transferindo responsabilidades do arquivo app para o routes) e deixando-o menos verboso.
 
+Justificando escolha do Expressjs:
+- Sistema de rotas completo;
+- Utiliza um conjunto pequeno de arquivos e pastas;
+- Possibilita o tratamento de exceções dentro da aplicação
+- Permite a integração de vários de templates facilitando a criação de páges;
+- Gerencia diferentes requisições HTTP com seus mais diversos verbos;
+
+Justificando escolha do SQLite:
+- Bom para pequenos aplicativos independentes
+- Desenvolvimento básico e testes
 
 ## Executando frontend
 ```bash
@@ -54,6 +65,8 @@ npm run dev abrirá em http://localhost/8000
 - VSCode
 - Node v14.19.3
 - Express
+- ThunderClient (Extensão VSCode)
+- Beekeeper Studio
 - CORS
 - FS 'FileSystem'
 - Nodemon
