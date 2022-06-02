@@ -1,44 +1,33 @@
-import createTable, { insertProduto, updateProduto, selectProdutos, deleteProduto } from './Contoller/produto.js'
 import express from 'express'
-
-const app = express();
-app.use(express.json());
+import fs from 'fs'
+import https from 'https'
+import cors from 'cors'
+import bodyParser from 'body-parser'
+import { createTable, deleteProduto, selectProduto } from './Contoller/produto.js'
 
 createTable()
 
-app.get('/', function (req, res) {
-  res.send('Olá mundo')
-})
+const app = express();
+app.use(express.json());
+app.use(cors())
+app.use(bodyParser.json())
 
-app.get('/produto', async function (req, res) {
-  let produtos = await selectProdutos()
+import router from './routes.js'
+app.use(router)
+
+app.delete('/produtos/:id', async function (req, res) {
+  let produtos = await deleteProduto(req.body.id)
   res.json(produtos)
 })
 
-app.post('/produto', function(req, res) {
-  insertProduto(req.body)
-  res.json({
-    "statuscode": 200
-  })
+app.get('/:id', async function (res, req) {
+  let produtos = await selectProduto(req.body.id)
+  res.json(produtos)
 })
 
-app.put('/produto', function(req, res) {
-  if(req.body && !req.body.id) {
-    res.json ({
-      "statuscode": 400,
-      "msg": "Você precisa informar o id"
-    })
-  }  else {
-    updateProduto(req.body)
-    res.json({
-      "statuscode": 200
-    })
-  }
-})
+app.listen(8000, () => console.log('API Rodando'))
 
-app.delete('/produto', function (req, res) {
-  let produto = deleteProduto(req.body.id)
-  res.json(produto)
-})
-
-app.listen(3000, () => console.log('API Rodando'))
+https.createServer({
+  cert: fs.readFileSync('src/SSL/code.crt'),
+  key: fs.readFileSync('src/SSL/code.key')
+}, app).listen(3001, () => console.log('Teste certificado https'))
