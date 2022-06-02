@@ -63,10 +63,10 @@ npm run dev abrirá em http://localhost/8000
 - Bodyparser
 - SSL
 
-## Fontes
-
-## Links
-
+## Links e Fontes
+https://www.npmjs.com/
+https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/
+https://expressjs.com/pt-br/4x/api.html
 
 ## Autor
 Jordan Cruz
