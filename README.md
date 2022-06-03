@@ -34,6 +34,11 @@ Você terá 7 dias para concluir o desafio e nos disponibilizar o link do github
 </details>
 
 ## Sobre o Projeto 💭
+
+![Rota Raiz e Get](https://user-images.githubusercontent.com/97923666/171771623-97ac1b24-3ec5-4134-8062-4cf7db6cec09.gif)
+
+![Post, Put e Delete](https://user-images.githubusercontent.com/97923666/171771628-ff418452-dabf-4354-a255-bf83734280ff.gif)
+
 Interface de Programação de Aplicação (API) desenvolvida em Nodejs com Framework Expressjs, biblioteca CORS para evitar erros nos endpoints em alguns navegadores, utilizando SQLite (Banco leve e escalavel, já que permite a sincronização de dados, não o sobrecarregando) e por fim foi utilizada as rotas do Express para auxiliar na manutenção do código (transferindo responsabilidades do arquivo app para o routes) e deixando-o menos verboso.
 
 Justificando escolha do Expressjs:
@@ -77,9 +82,9 @@ npm run dev abrirá em http://localhost/8000
 - SSL
 
 ## Links e Fontes
-https://www.npmjs.com/
-https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/
-https://expressjs.com/pt-br/4x/api.html
+- https://www.npmjs.com/ (NPM)
+- https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/ (Conventional Commits)
+- https://expressjs.com/pt-br/4x/api.html (Documentação Express)
 
 ## Autor
 Jordan Cruz
